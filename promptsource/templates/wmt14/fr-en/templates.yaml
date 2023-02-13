@@ -31,6 +31,21 @@ templates:
       original_task: true
     name: version-en-fr-source+target
     reference: ''
+  170a161d-1516-47c2-b1a6-62e50bb23d9e: !Template
+    answer_choices: null
+    id: 170a161d-1516-47c2-b1a6-62e50bb23d9e
+    jinja: 'Traduire en anglais: {{translation["fr"]}}
+
+      |||  {{translation["en"]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - BLEU
+      original_task: true
+    name: fr_translate-fr-en-target
+    reference: ''
   1fbf99d9-980a-4bf8-b30e-dcf9e3ad5feb: !Template
     answer_choices: null
     id: 1fbf99d9-980a-4bf8-b30e-dcf9e3ad5feb
@@ -57,8 +72,22 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: gpt-3-fr-en-source+target
+    name: gpt3-fr-en-source+target
     reference: GPT-3 paper
+  2784f297-2fb3-4b8a-9762-91bfebcec15c: !Template
+    answer_choices: null
+    id: 2784f297-2fb3-4b8a-9762-91bfebcec15c
+    jinja: "Etant donn\xE9 le texte source suivant en fran\xE7ais: {{translation[\"\
+      fr\"]}}, une bonne traduction en anglais est:\n||| {{translation[\"en\"]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - BLEU
+      original_task: true
+    name: fr_a_good_translation-fr-en-source+target
+    reference: ''
   280bc983-9f20-4e80-ab02-5f333df90a42: !Template
     answer_choices: null
     id: 280bc983-9f20-4e80-ab02-5f333df90a42
@@ -71,7 +100,7 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: gpt-3-fr-en-target
+    name: gpt3-fr-en-target
     reference: GPT-3 paper
   2fc841fb-b872-4cc6-9a88-735d6bb7e2e3: !Template
     answer_choices: null
@@ -100,6 +129,20 @@ templates:
       - BLEU
       original_task: true
     name: translate-fr-en-target
+    reference: ''
+  41f9dacc-824c-4c49-85cb-bad00fedcc03: !Template
+    answer_choices: null
+    id: 41f9dacc-824c-4c49-85cb-bad00fedcc03
+    jinja: "Etant donn\xE9 le texte source suivant: {{translation[\"en\"]}}, une bonne\
+      \ traduction en fran\xE7ais est:\n||| {{translation[\"fr\"]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - BLEU
+      original_task: true
+    name: fr_a_good_translation-en-fr-target
     reference: ''
   43dc1b77-e8ea-4dc8-8a12-0abc3b0dbba0: !Template
     answer_choices: null
@@ -139,7 +182,7 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: gpt-3-en-fr-target
+    name: gpt3-en-fr-target
     reference: GPT-3 paper
   51d41a04-1d90-4bae-b6e5-be7598cdbfb0: !Template
     answer_choices: null
@@ -169,6 +212,20 @@ templates:
       original_task: true
     name: translate-en-fr-target
     reference: ''
+  52e439ab-9c79-45c7-96e3-26b828ab8478: !Template
+    answer_choices: null
+    id: 52e439ab-9c79-45c7-96e3-26b828ab8478
+    jinja: "Traduire de l'anglais en fran\xE7ais: {{translation[\"en\"]}}\n|||  {{translation[\"\
+      fr\"]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - BLEU
+      original_task: true
+    name: fr_translate-en-fr-source+target
+    reference: ''
   5af8c873-7176-46b8-a31a-2b2d393c6c68: !Template
     answer_choices: null
     id: 5af8c873-7176-46b8-a31a-2b2d393c6c68
@@ -181,8 +238,36 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: translate-en-fr-source+starget
+    name: translate-en-fr-source+target
     reference: ''
+  65c35e5d-039d-43cb-b2f9-89409202d95d: !Template
+    answer_choices: null
+    id: 65c35e5d-039d-43cb-b2f9-89409202d95d
+    jinja: "Anglais: {{translation[\"en\"]}} = Fran\xE7ais:\n||| {{translation[\"\
+      fr\"]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - BLEU
+      original_task: true
+    name: fr_xglm-en-fr-source+target
+    reference: Adapted from XGLM, translated into French
+  692e40ee-014c-40b2-92b7-7a2e85c1082f: !Template
+    answer_choices: null
+    id: 692e40ee-014c-40b2-92b7-7a2e85c1082f
+    jinja: "Fran\xE7ais: {{translation[\"fr\"]}} = Anglais:\n||| {{translation[\"\
+      en\"]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - BLEU
+      original_task: true
+    name: fr_xglm-fr-en-source+target
+    reference: 'Adapted from XGLM paper on few shot evaluation '
   762c0878-c8fc-43ec-839f-d5d8435a94f6: !Template
     answer_choices: null
     id: 762c0878-c8fc-43ec-839f-d5d8435a94f6
@@ -210,8 +295,22 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: xglm-en-fr-source-target
+    name: xglm-en-fr-source+target
     reference: Adapted from XGLM paper on few shot evaluation https://arxiv.org/abs/2112.10668
+  8ba0564e-6c38-4980-ac5d-2b3e307081e5: !Template
+    answer_choices: null
+    id: 8ba0564e-6c38-4980-ac5d-2b3e307081e5
+    jinja: "Etant donn\xE9 le texte source suivant: {{translation[\"fr\"]}}, une bonne\
+      \ traduction en anglais est:\n||| {{translation[\"en\"]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - BLEU
+      original_task: true
+    name: fr_a_good_translation-fr-en-target
+    reference: ''
   957b8554-a00a-4652-b080-e9ee3ccae381: !Template
     answer_choices: null
     id: 957b8554-a00a-4652-b080-e9ee3ccae381
@@ -268,7 +367,7 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: translate_as_en-fr-target
+    name: translate_as-en-fr-target
     reference: ''
   aad799b1-defb-44a9-bd51-1abcaa29fad7: !Template
     answer_choices: null
@@ -282,8 +381,21 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: translate_as_en-fr-source+target
+    name: translate_as-en-fr-source+target
     reference: ''
+  af0efa1a-06f1-4fd4-9c2b-5166a7d047d2: !Template
+    answer_choices: null
+    id: af0efa1a-06f1-4fd4-9c2b-5166a7d047d2
+    jinja: "{{translation[\"en\"]}} = Fran\xE7ais:\n||| {{translation[\"fr\"]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - BLEU
+      original_task: true
+    name: fr_xglm-en-fr-target
+    reference: Adapted from XGLM paper on few shot evaluation
   b0e110eb-4fde-45fd-a561-e8e24ad83916: !Template
     answer_choices: null
     id: b0e110eb-4fde-45fd-a561-e8e24ad83916
@@ -298,6 +410,20 @@ templates:
       original_task: true
     name: xglm-fr-en-source+target
     reference: XGLM paper https://arxiv.org/abs/2112.10668
+  ba3d4d9f-6a8a-41b1-a8a8-78a93d501ff9: !Template
+    answer_choices: null
+    id: ba3d4d9f-6a8a-41b1-a8a8-78a93d501ff9
+    jinja: "Traduire en fran\xE7ais: {{translation[\"en\"]}}\n|||  {{translation[\"\
+      fr\"]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - BLEU
+      original_task: true
+    name: fr_translate-en-fr-target
+    reference: ''
   bc95c647-5979-4522-9e6e-f5eb93b69a00: !Template
     answer_choices: null
     id: bc95c647-5979-4522-9e6e-f5eb93b69a00
@@ -310,7 +436,7 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: translate_as_fr-en-source+target
+    name: translate_as-fr-en-source+target
     reference: ''
   c50ca84e-3ca7-4c3c-89e1-3c95351f6ed8: !Template
     answer_choices: null
@@ -341,6 +467,21 @@ templates:
       original_task: true
     name: version-en-fr-target
     reference: ''
+  cd1cd326-38de-48e0-bbee-62c6f6025490: !Template
+    answer_choices: null
+    id: cd1cd326-38de-48e0-bbee-62c6f6025490
+    jinja: '{{translation["fr"]}} = Anglais:
+
+      ||| {{translation["en"]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - BLEU
+      original_task: true
+    name: fr_xglm-fr-en-target
+    reference: Adapted from XGLM paper on few shot evaluation
   dd003b93-943e-41c9-8454-23f647e77dcc: !Template
     answer_choices: null
     id: dd003b93-943e-41c9-8454-23f647e77dcc
@@ -353,7 +494,21 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: translate_as_fr-en-target
+    name: translate_as-fr-en-target
+    reference: ''
+  ea0dd5c6-316b-4144-8d9a-2108b04a6b22: !Template
+    answer_choices: null
+    id: ea0dd5c6-316b-4144-8d9a-2108b04a6b22
+    jinja: "Traduire du fran\xE7ais en anglais: {{translation[\"fr\"]}}\n|||  {{translation[\"\
+      en\"]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - BLEU
+      original_task: true
+    name: fr_translate-fr-en-source+target
     reference: ''
   ec3b96b0-de5e-4ff4-b7bb-cda348ff7fcf: !Template
     answer_choices: null
@@ -367,5 +522,19 @@ templates:
       metrics:
       - BLEU
       original_task: true
-    name: gpt-3-en-fr-source+target
+    name: gpt3-en-fr-source+target
     reference: GPT 3 paper
+  f7906a40-1dd3-45b7-87b1-7c5980374573: !Template
+    answer_choices: null
+    id: f7906a40-1dd3-45b7-87b1-7c5980374573
+    jinja: "Etant donn\xE9 le texte source suivant en anglais: {{translation[\"en\"\
+      ]}} , une bonne traduction en fran\xE7ais est:\n||| {{translation[\"fr\"]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - BLEU
+      original_task: true
+    name: fr_a_good_translation-en-fr-source+target
+    reference: ''
