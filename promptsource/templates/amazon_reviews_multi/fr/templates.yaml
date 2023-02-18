@@ -1,0 +1,86 @@
+dataset: amazon_reviews_multi
+subset: fr
+templates:
+  58530197-73e0-4584-b6a5-712a66db70b0: !Template
+    answer_choices: null
+    id: 58530197-73e0-4584-b6a5-712a66db70b0
+    jinja: 'Donnez un titre au commentaire ci-dessous :
+
+      ===
+
+      {{review_body}} |||
+
+      {{review_title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: fr_generate_title
+    reference: generate_title in French
+  ac1302d5-c842-420f-a0bf-3d3e980c4078: !Template
+    answer_choices: 1|||2|||3|||4|||5
+    id: ac1302d5-c842-420f-a0bf-3d3e980c4078
+    jinja: "Sur la base du commentaire et de son titre, \xE9valuez le produit en nombre\
+      \ d'\xE9toiles:\n(1 \xE9toile est la pire note, 5 la meilleure)\n ===\n{{review_title}}.\
+      \ {{review_body}}  |||\n{{answer_choices[stars-1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - Accuracy
+      - Other
+      original_task: true
+    name: fr_prompt_body_title_to_star
+    reference: body_title_to_star
+  ac1845d0-dd30-4116-98a5-62f8576f49c2: !Template
+    answer_choices: 1|||2|||3|||4|||5
+    id: ac1845d0-dd30-4116-98a5-62f8576f49c2
+    jinja: "Sur la base du titre du commentaire, attribuez un nombre d'\xE9toiles\
+      \ au produit:\n(1 \xE9toile est la pire note,  5 la meilleure)\n===\n{{review_title}}\
+      \ |||\n{{answer_choices[stars-1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - Accuracy
+      - Other
+      original_task: false
+    name: fr_prompt_title_to_star
+    reference: prompt_title_to_star in French
+  cb36d09d-671a-4b04-84c7-d734382d2d99: !Template
+    answer_choices: 1|||2|||3|||4|||5
+    id: cb36d09d-671a-4b04-84c7-d734382d2d99
+    jinja: "Sur la base du commentaire, \xE9valuez le produit en nombre d'\xE9toiles\n\
+      (1 \xE9toile est la pire note, 5 la meilleure)\n ===\n{{review_body}} |||\n\
+      {{answer_choices[stars-1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - Accuracy
+      - Other
+      original_task: true
+    name: fr_prompt_review_to_star
+    reference: 'prompt review to star '
+  dda5b8a5-9fcb-4631-9a8f-76f50c9ce58a: !Template
+    answer_choices: null
+    id: dda5b8a5-9fcb-4631-9a8f-76f50c9ce58a
+    jinja: "Devinez la cat\xE9gorie du produit \xE0 partir du commentaire ci-dessous:\n\
+      ===\n{{review_body}} |||\n{{product_category}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - Accuracy
+      - Other
+      original_task: false
+    name: fr_prompt_review_to_category
+    reference: prompt review to category
