@@ -1,0 +1,17 @@
+dataset: xnli
+subset: fr
+templates:
+  74899e3f-d445-4768-a68a-274814e36a38: !Template
+    answer_choices: "Vrai ||| Ind\xE9cidable ||| Faux"
+    id: 74899e3f-d445-4768-a68a-274814e36a38
+    jinja: "Supposons que ce qui suit est vrai : {{premise}}\n      Alors l'enonc\xE9\
+      \ suivant : \"{{hypothesis}}\" est-il {{\"vrai\"}}, {{\"faux\"}}, ou\n     \
+      \ {{\"ind\xE9cidable\"}}? ||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages: []
+      metrics:
+      - Accuracy
+      original_task: true
+    name: fr_take_the_following_as_truth
+    reference: take following as truth
