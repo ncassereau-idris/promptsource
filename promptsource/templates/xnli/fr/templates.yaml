@@ -1,6 +1,20 @@
 dataset: xnli
 subset: fr
 templates:
+  061255a6-2c66-4abd-a3c1-45718e67ab90: !Template
+    answer_choices: "Oui ||| Peut-\xEAtre ||| Non"
+    id: 061255a6-2c66-4abd-a3c1-45718e67ab90
+    jinja: "Supposons \"{{premise}}\" Peut-on en d\xE9duire que \"{{hypothesis}}\"\
+      \ ? Oui, Non ou Peut-\xEAtre ?\n||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fr
+      metrics:
+      - Accuracy
+      original_task: true
+    name: fr_can_we_infer
+    reference: Webston and Pavlik
   74899e3f-d445-4768-a68a-274814e36a38: !Template
     answer_choices: "Vrai ||| Ind\xE9cidable ||| Faux"
     id: 74899e3f-d445-4768-a68a-274814e36a38
@@ -15,3 +29,74 @@ templates:
       original_task: true
     name: fr_take_the_following_as_truth
     reference: take following as truth
+  92e6ae8f-6aa7-4073-b6cb-b08ae03e22ab: !Template
+    answer_choices: "Oui ||| Peut-\xEAtre ||| Non"
+    id: 92e6ae8f-6aa7-4073-b6cb-b08ae03e22ab
+    jinja: "\"{{premise}} \\n\\nQuestion: Est-ce que cela implique que:\n\"{{hypothesis}}\"\
+      \ ? Oui,  Non, ou Peut-\xEAtre? ||| {{answer_choices[label]}}\""
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fr
+      metrics:
+      - Accuracy
+      original_task: true
+    name: fr_does_this_imply
+    reference: does this imply (Sahn et al, 2021)
+  983011b4-737e-42d3-9e61-0f81e1be6dcf: !Template
+    answer_choices: "Oui ||| Peut-\xEAtre ||| Non"
+    id: 983011b4-737e-42d3-9e61-0f81e1be6dcf
+    jinja: "Etant donn\xE9  {{premise}} S'ensuit-il que:  {{hypothesis}} Oui, Non,\
+      \ ou Peut-\xEAtre ?\n||| {{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fr
+      metrics:
+      - Accuracy
+      original_task: true
+    name: fr_does_follow_that
+    reference: Sahn et al, 2021
+  a5b2d8f7-1f80-438b-8371-9f0c00832a6d: !Template
+    answer_choices: "Vrai ||| Ind\xE9cidable ||| Faux"
+    id: a5b2d8f7-1f80-438b-8371-9f0c00832a6d
+    jinja: "\"{{premise}}\"\nQuestion: \"{{hypothesis}}\" est Vrai, Faux ou Ind\xE9\
+      cidable ? ||| \n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fr
+      metrics:
+      - Accuracy
+      original_task: true
+    name: fr_GPT3_style
+    reference: Gpt3 paper
+  b51c8cd1-b4ab-4d5b-bc49-48e84a46f2da: !Template
+    answer_choices: "Oui ||| Peut-\xEAtre ||| Non"
+    id: b51c8cd1-b4ab-4d5b-bc49-48e84a46f2da
+    jinja: "{{premise}} Etant donn\xE9 le passage pr\xE9c\xE9dent, est-il vrai que\
+      \ : {{hypothesis}} ?\n Oui, Non ou Peut-\xEAtre ? ||| {{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fr
+      metrics:
+      - Accuracy
+      original_task: true
+    name: fr_based_on_previous_passage
+    reference: Sahn et al, 2021
+  e1b2080d-1c1e-4069-8d78-b94edf7910bc: !Template
+    answer_choices: "Oui ||| Peut-\xEAtre ||| Non"
+    id: e1b2080d-1c1e-4069-8d78-b94edf7910bc
+    jinja: "Etant donn\xE9 \"{{premise}}\" Est-il garanti que \"{{hypothesis}}\" est\
+      \ vrai ? Oui, Non, ou Peut-\xEAtre ?\n||| {{ answer_choices[label] }} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fr
+      metrics:
+      - Accuracy
+      original_task: true
+    name: fr_guaranteed_that
+    reference: Weston and Pavlik 2021
