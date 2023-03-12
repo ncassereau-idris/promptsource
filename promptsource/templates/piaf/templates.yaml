@@ -1,5 +1,93 @@
 dataset: piaf
 templates:
+  488cb9e3-c7f9-4b58-9091-d99ce80b7a4c: !Template
+    answer_choices: null
+    id: 488cb9e3-c7f9-4b58-9091-d99ce80b7a4c
+    jinja: 'Après avoir lu le paragraphe, merci de répondre à la question qui
+      le suit:
+
+      {{context}}
+
+      {{question}} ||| {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - Accuracy
+      - Squad
+      original_task: true
+    name: fr_after_reading
+    reference: ''
+  9c58e004-0a81-48bf-91d4-c8a1a70f44bd: !Template
+    answer_choices: null
+    id: 9c58e004-0a81-48bf-91d4-c8a1a70f44bd
+    jinja: '{{context}}
+
+
+      Etant donné le contexte qui précède, {{question}} ||| {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - Accuracy
+      - Squad
+      original_task: true
+    name: fr_given_above_context
+    reference: ''
+  bb27db4c-79d0-46d7-ad5f-43e688eca314: !Template
+    answer_choices: null
+    id: bb27db4c-79d0-46d7-ad5f-43e688eca314
+    jinja: '{{title}}
+
+      {{context}}
+
+      Q: {{question}}
+
+
+      A: ||| {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - Accuracy
+      - Squad
+      original_task: true
+    name: fr_context_follow_q
+    reference: ''
+  bb4a9271-b0e2-47a9-b21a-7c764112b856: !Template
+    answer_choices: null
+    id: bb4a9271-b0e2-47a9-b21a-7c764112b856
+    jinja: "Etant donné le passage suivant, répondre à la question ci-dessous: \n{{context}}\n\
+      {{question}} ||| {{answers.text[0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - Accuracy
+      - Squad
+      original_task: true
+    name: fr_given_passage_answer
+    reference: ''
+  e31350ac-1801-44af-a847-3d1328592300: !Template
+    answer_choices: null
+    id: e31350ac-1801-44af-a847-3d1328592300
+    jinja: 'Extraire du passage la réponse à cette question: {{question}}
+
+      Passage: {{title}}: {{context}} ||| {{answers[''text''][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - Accuracy
+      - Squad
+      original_task: true
+    name: fr_extract_the_answer
+    reference: ''
   4bac0d14-ac52-442c-9364-ea7add071af4: !Template
     answer_choices: null
     id: 4bac0d14-ac52-442c-9364-ea7add071af4
