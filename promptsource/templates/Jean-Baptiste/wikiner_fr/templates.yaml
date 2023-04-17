@@ -1,0 +1,91 @@
+dataset: Jean-Baptiste/wikiner_fr
+templates:
+  0beb0a15-230c-4a7f-ad75-7c573a14bd12: !Template
+    answer_choices: null
+    id: 0beb0a15-230c-4a7f-ad75-7c573a14bd12
+    jinja: "{% set ner_num = 3 %}\nLister les entit\xE9s de type \"organisation\"\
+      \ dans le texte suivant : {% for idx in range(tokens|length) %}{{ tokens[idx]\
+      \ }}{% if idx+1 < tokens|length %}{% if (tokens[idx+1] not in \"])'/\u2019.,%-\u20AC\
+      $\xA3\\\")\" and tokens[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif\
+      \ %}{% endfor %}||| \n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
+      \ == ner_num %}{{ tokens[idx] }}{% endif %}{% if idx+1 < ner_tags|length %}{%\
+      \ if ner_tags[idx] == ner_num %}{% if ner_tags[idx+1] != ner_num  %}\n{% else\
+      \ %} {% endif %}{% endif %}{% endif %}{% endfor %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - Other
+      original_task: true
+    name: list-ORG
+    reference: list-ORG
+  a4cb21eb-961a-49e7-a50c-72954c24e20a: !Template
+    answer_choices: null
+    id: a4cb21eb-961a-49e7-a50c-72954c24e20a
+    jinja: "{% set ner_num = 1 %}\nLister les entit\xE9s de type \"lieu\" dans le\
+      \ texte suivant : {% for idx in range(tokens|length) %}{{ tokens[idx] }}{% if\
+      \ idx+1 < tokens|length %}{% if (tokens[idx+1] not in \"])'/\u2019.,%-\u20AC\
+      $\xA3\\\")\" and tokens[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif\
+      \ %}{% endfor %}||| \n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
+      \ == ner_num %}{{ tokens[idx] }}{% endif %}{% if idx+1 < ner_tags|length %}{%\
+      \ if ner_tags[idx] == ner_num %}{% if ner_tags[idx+1] != ner_num  %}\n{% else\
+      \ %} {% endif %}{% endif %}{% endif %}{% endfor %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - Other
+      original_task: true
+    name: list-LOC
+    reference: list-LOC
+  d0faa0ae-d817-48c6-ac58-4d3cb0772edf: !Template
+    answer_choices: personne, lieu, organisation, none
+    id: d0faa0ae-d817-48c6-ac58-4d3cb0772edf
+    jinja: "{% set entities = [] %}{% set entity_types = [] %}{% set prev_entities\
+      \ = [None] %}{% for idx in range(ner_tags|length) %}{% if ner_tags[idx] != 0\
+      \ %}{% if ner_tags[idx] != prev_entities[idx] %}{{ entities.append([])|default(\"\
+      \", True) }}{{ entity_types.append(ner_tags[idx])|default(\"\", True) }}{% endif\
+      \ %}{{ entities[-1].append(tokens[idx])|default(\"\", True)  }}{% endif %}{{\
+      \ prev_entities.append(ner_tags[idx])|default(\"\", True) }}{% endfor %}{% set\
+      \ rand_idx = range(entities|length)|random %}{% if entities|length > 0 %}Dans\
+      \ le texte suivant, \"{% for idx in range(entities[rand_idx]|length) %}{{ entities[rand_idx][idx]\
+      \ }}{% if idx+1 < entities[rand_idx]|length %}{% if (entities[rand_idx][idx+1]\
+      \ not in \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and entities[rand_idx][idx][-1]\
+      \ not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor %}\" est de quel\
+      \ type entre \"personne\", \"lieu\" ou \"organisation\"? \n\n{% for idx in range(tokens|length)\
+      \ %}{{ tokens[idx] }}{% if idx+1 < tokens|length %}{% if (tokens[idx+1] not\
+      \ in \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and tokens[idx][-1] not in \"'[(/\u2019\
+      -\") %} {% endif %}{% endif %}{% endfor %}{% endif %}\n||| {% if entity_types[rand_idx]\
+      \ == 1 %}lieu{% elif entity_types[rand_idx] == 2 %}personne{% elif entity_types[rand_idx]\
+      \ == 3 %}organisation{% else %}none{% endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fr
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose-entity
+    reference: choose-entity
+  fdb9ac8e-c8b6-4e5c-84d9-dd73b1534c26: !Template
+    answer_choices: null
+    id: fdb9ac8e-c8b6-4e5c-84d9-dd73b1534c26
+    jinja: "{% set ner_num = 2 %}\nLister les entit\xE9s de type \"personne\" dans\
+      \ le texte suivant : {% for idx in range(tokens|length) %}{{ tokens[idx] }}{%\
+      \ if idx+1 < tokens|length %}{% if (tokens[idx+1] not in \"])'/\u2019.,%-\u20AC\
+      $\xA3\\\")\" and tokens[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif\
+      \ %}{% endfor %}||| \n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
+      \ == ner_num %}{{ tokens[idx] }}{% endif %}{% if idx+1 < ner_tags|length %}{%\
+      \ if ner_tags[idx] == ner_num %}{% if ner_tags[idx+1] != ner_num  %}\n{% else\
+      \ %} {% endif %}{% endif %}{% endif %}{% endfor %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - Other
+      original_task: true
+    name: list-PER
+    reference: list-PER

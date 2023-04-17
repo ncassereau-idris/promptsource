@@ -42,7 +42,35 @@ templates:
       - Other
       original_task: true
     name: list-ORG
-    reference: ''
+    reference: list-ORG
+  f33b63cb-0127-4e0d-a706-1cfe369ffd2d: !Template
+    answer_choices: null
+    id: f33b63cb-0127-4e0d-a706-1cfe369ffd2d
+    jinja: "{% set entities = [] %}{% set entity_types = [] %}{% set prev_entities\
+      \ = [None] %}{% for idx in range(ner_tags|length) %}{% if ner_tags[idx] != 0\
+      \ %}{% if (ner_tags[idx]-(ner_tags[idx]+1)%2) != prev_entities[idx] %}{{ entities.append([])|default(\"\
+      \", True) }}{{ entity_types.append(ner_tags[idx])|default(\"\", True) }}{% endif\
+      \ %}{{ entities[-1].append(tokens[idx])|default(\"\", True)  }}{% endif %}{{\
+      \ prev_entities.append(ner_tags[idx]-(ner_tags[idx]+1)%2)|default(\"\", True)\
+      \ }}{% endfor %}{% set rand_idx = range(entities|length)|random %}{% if entities|length\
+      \ > 0 %}Dans le texte suivant, \"{% for idx in range(entities[rand_idx]|length)\
+      \ %}{{ entities[rand_idx][idx] }}{% if idx+1 < entities[rand_idx]|length %}{%\
+      \ if (entities[rand_idx][idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and\
+      \ entities[rand_idx][idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif\
+      \ %}{% endfor %}\" est de quel type entre \"personne\", \"lieu\" ou \"organisation\"\
+      ? \n\n{% for idx in range(tokens|length) %}{{ tokens[idx] }}{% if idx+1 < tokens|length\
+      \ %}{% if (tokens[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and tokens[idx][-1]\
+      \ not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor %}{% endif %}\n\
+      ||| {% if entity_types[rand_idx] == 1 %}personne{% elif entity_types[rand_idx]\
+      \ == 3 %}organisation{% elif entity_types[rand_idx] == 5 %}lieu{% else %}none{%\
+      \ endif %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages: []
+      metrics: []
+      original_task: true
+    name: choose-entity
+    reference: choose-entity
   f4b66834-d50a-4059-82b4-03366394e86c: !Template
     answer_choices: null
     id: f4b66834-d50a-4059-82b4-03366394e86c
@@ -63,4 +91,4 @@ templates:
       - Other
       original_task: true
     name: list-LOC
-    reference: ''
+    reference: list-LOC
