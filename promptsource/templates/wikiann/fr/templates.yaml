@@ -1,0 +1,66 @@
+dataset: wikiann
+subset: fr
+templates:
+  1f800a8f-83a9-4163-8b65-48452f6ff788: !Template
+    answer_choices: null
+    id: 1f800a8f-83a9-4163-8b65-48452f6ff788
+    jinja: "{% set ner_num = 1 %}\nLister les entit\xE9s de type \"personne\" dans\
+      \ le texte suivant : {% for idx in range(tokens|length) %}{{ tokens[idx] }}{%\
+      \ if idx+1 < tokens|length %}{% if (tokens[idx+1] not in \"])'/\u2019.,%-\u20AC\
+      $\xA3\\\")\" and tokens[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif\
+      \ %}{% endfor %} ||| {% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
+      \ in [ner_num, ner_num+1] %}{% if ner_tags[idx] == ner_num %}\n{% else %}{%\
+      \ if (tokens[idx] not in \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and tokens[idx-1][-1]\
+      \ not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{{ tokens[idx] }}{% endif\
+      \ %}{% endfor %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - Other
+      original_task: true
+    name: list-PER
+    reference: list-PER
+  e8528c25-17f6-463b-a6a5-c68888035680: !Template
+    answer_choices: null
+    id: e8528c25-17f6-463b-a6a5-c68888035680
+    jinja: "{% set ner_num = 3 %}\nLister les entit\xE9s de type \"organisation\"\
+      \ dans le texte suivant : {% for idx in range(tokens|length) %}{{ tokens[idx]\
+      \ }}{% if idx+1 < tokens|length %}{% if (tokens[idx+1] not in \"])'/\u2019.,%-\u20AC\
+      $\xA3\\\")\" and tokens[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif\
+      \ %}{% endfor %} ||| {% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
+      \ in [ner_num, ner_num+1] %}{% if ner_tags[idx] == ner_num %}\n{% else %}{%\
+      \ if (tokens[idx] not in \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and tokens[idx-1][-1]\
+      \ not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{{ tokens[idx] }}{% endif\
+      \ %}{% endfor %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - Other
+      original_task: true
+    name: list-ORG
+    reference: ''
+  f4b66834-d50a-4059-82b4-03366394e86c: !Template
+    answer_choices: null
+    id: f4b66834-d50a-4059-82b4-03366394e86c
+    jinja: "{% set ner_num = 5 %}\nLister les entit\xE9s de type \"lieu\" dans le\
+      \ texte suivant : {% for idx in range(tokens|length) %}{{ tokens[idx] }}{% if\
+      \ idx+1 < tokens|length %}{% if (tokens[idx+1] not in \"])'/\u2019.,%-\u20AC\
+      $\xA3\\\")\" and tokens[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif\
+      \ %}{% endfor %} ||| {% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
+      \ in [ner_num, ner_num+1] %}{% if ner_tags[idx] == ner_num %}\n{% else %}{%\
+      \ if (tokens[idx] not in \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and tokens[idx-1][-1]\
+      \ not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{{ tokens[idx] }}{% endif\
+      \ %}{% endfor %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - Other
+      original_task: true
+    name: list-LOC
+    reference: ''
