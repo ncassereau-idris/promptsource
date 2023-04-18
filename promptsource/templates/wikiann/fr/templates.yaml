@@ -44,7 +44,7 @@ templates:
     name: list-ORG
     reference: list-ORG
   f33b63cb-0127-4e0d-a706-1cfe369ffd2d: !Template
-    answer_choices: null
+    answer_choices: personne||| lieu|||organisation
     id: f33b63cb-0127-4e0d-a706-1cfe369ffd2d
     jinja: "{% set entities = [] %}{% set entity_types = [] %}{% set prev_entities\
       \ = [None] %}{% for idx in range(ner_tags|length) %}{% if ner_tags[idx] != 0\
@@ -65,9 +65,11 @@ templates:
       \ == 3 %}organisation{% elif entity_types[rand_idx] == 5 %}lieu{% else %}none{%\
       \ endif %}\n"
     metadata: !TemplateMetadata
-      choices_in_prompt: false
-      languages: []
-      metrics: []
+      choices_in_prompt: true
+      languages:
+      - fr
+      metrics:
+      - Accuracy
       original_task: true
     name: choose-entity
     reference: choose-entity

@@ -41,7 +41,7 @@ templates:
     name: list-LOC
     reference: list-LOC
   d0faa0ae-d817-48c6-ac58-4d3cb0772edf: !Template
-    answer_choices: personne, lieu, organisation, none
+    answer_choices: personne|||lieu|||organisation|||none
     id: d0faa0ae-d817-48c6-ac58-4d3cb0772edf
     jinja: "{% set entities = [] %}{% set entity_types = [] %}{% set prev_entities\
       \ = [None] %}{% for idx in range(ner_tags|length) %}{% if ner_tags[idx] != 0\
