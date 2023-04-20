@@ -16,7 +16,9 @@ templates:
       languages:
       - fr
       metrics:
-      - Other
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
       original_task: true
     name: list-ORG
     reference: list-ORG
@@ -36,7 +38,9 @@ templates:
       languages:
       - fr
       metrics:
-      - Other
+      -	fuzzy_list_p
+      -	fuzzy_list_r
+      -	fuzzy_list_f
       original_task: true
     name: list-LOC
     reference: list-LOC
@@ -85,7 +89,9 @@ templates:
       languages:
       - fr
       metrics:
-      - Other
+      -	fuzzy_list_p
+      -	fuzzy_list_r
+      -	fuzzy_list_f
       original_task: true
     name: list-PER
     reference: list-PER
