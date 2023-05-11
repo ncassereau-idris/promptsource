@@ -27,8 +27,8 @@ requirements = [
 setup(
     name='promptsource',
     version='0.2.3',
-    url='https://github.com/bigscience-workshop/promptsource.git',
-    author='BigScience - Prompt Engineering Working Group',
+    url='https://github.com/ncassereau-idris/promptsource.git',
+    author='BigScience - Prompt Engineering Working Group - Fork by IDRIS',
     author_email='sbach@cs.brown.edu,victor@huggingface.co',
     python_requires='>=3.7,<3.11',
     install_requires=requirements,
@@ -51,5 +51,6 @@ setup(
     package_data={"": [
         "templates/*/*.yaml",
         "templates/*/*/*.yaml",
+        "templates/*/*/*/*.yaml",
     ]}
 )
