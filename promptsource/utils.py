@@ -2,7 +2,7 @@
 import os
 
 import datasets
-import requests
+from huggingface_hub import HfApi
 
 from promptsource import DEFAULT_PROMPTSOURCE_CACHE_HOME
 from promptsource.templates import INCLUDED_USERS
@@ -115,11 +115,11 @@ def filter_datasets():
     """
     filtered_datasets = []
 
-    response = requests.get("https://huggingface.co/api/datasets?full=true")
-    tags = response.json()
+    api = HfApi()
+    tags = api.list_datasets()
 
     for dataset in tags:
-        dataset_name = dataset["id"]
+        dataset_name = dataset.id
 
         is_community_dataset = "/" in dataset_name
         if is_community_dataset:
