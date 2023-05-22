@@ -99,6 +99,42 @@ templates:
       original_task: false
     name: list-PROC
     reference: list-PROC
+  a69c1415-103c-4fa3-aefb-ccfd8d754e11: !Template
+    answer_choices: "partie du corps|||\xEAtre vivant|||sympt\xF4me ou maladie|||proc\xE9\
+      dure m\xE9dicale|||composant chimique ou m\xE9dicament|||zone g\xE9ographique|||physiologie|||ph\xE9\
+      nom\xE8ne|||objet|||appareil"
+    id: a69c1415-103c-4fa3-aefb-ccfd8d754e11
+    jinja: "{% set entities = [] %}{% set entity_types = [] %}{% set prev_entities\
+      \ = [None] %}{% for idx in range(ner_tags|length) %}{% if ner_tags[idx] != 0\
+      \ %}{% if ner_tags[idx] != prev_entities[idx] %}{{ entities.append([])|default(\"\
+      \", True) }}{{ entity_types.append(ner_tags[idx])|default(\"\", True) }}{% endif\
+      \ %}{{ entities[-1].append(words[idx])|default(\"\", True)  }}{% endif %}{{\
+      \ prev_entities.append(ner_tags[idx])|default(\"\", True) }}{% endfor %}{% set\
+      \ rand_idx = range(entities|length)|random %}{% if entities|length > 0 %}Dans\
+      \ le texte suivant, \"{% for idx in range(entities[rand_idx]|length) %}{{ entities[rand_idx][idx]\
+      \ }}{% if idx+1 < entities[rand_idx]|length %}{% if (entities[rand_idx][idx+1]\
+      \ not in \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and entities[rand_idx][idx][-1]\
+      \ not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor %}\" est de quel\
+      \ type entre \"partie du corps\", \"\xEAtre vivant\", \"sympt\xF4me ou maladie\"\
+      , \"proc\xE9dure m\xE9dicale\", \"composant chimique ou m\xE9dicament\", \"\
+      zone g\xE9ographique\", \"physiologie\", \"ph\xE9nom\xE8ne\", \"objet\" ou \"\
+      appareil ? \n\n{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1\
+      \ < words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
+      )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
+      \ %}{% endif %}\n||| {% if entity_types[rand_idx] == 1 %}partie du corps{%elif\
+      \ entity_types[rand_idx] == 2 %}\xEAtre vivant{%elif entity_types[rand_idx]\
+      \ == 3 %}sympt\xF4me ou maladie{%elif entity_types[rand_idx] == 4 %}proc\xE9\
+      dure m\xE9dicale{%elif entity_types[rand_idx] == 5 %}composant chimique ou m\xE9\
+      dicament{%elif entity_types[rand_idx] == 6 %}zone g\xE9ographique{%elif entity_types[rand_idx]\
+      \ == 7 %}physiologie{%elif entity_types[rand_idx] == 8 %}ph\xE9nom\xE8ne{%elif\
+      \ entity_types[rand_idx] == 9 %}objet{%elif entity_types[rand_idx] == 10 %}appareil{%endif%}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages: []
+      metrics: []
+      original_task: false
+    name: choose-entity
+    reference: choose-entity
   a6b1d3a2-9be4-4286-b921-fb1a1e59a541: !Template
     answer_choices: null
     id: a6b1d3a2-9be4-4286-b921-fb1a1e59a541
