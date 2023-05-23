@@ -9,7 +9,8 @@ templates:
       \ endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
-      metrics: []
+      metrics:
+      - Accuracy
       original_task: true
     name: perceived_US2
     reference: ''
