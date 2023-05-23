@@ -1,4 +1,4 @@
-dataset: meczifho/quaero
+dataset: meczifho/QuaeroFrenchMed
 templates:
   34a46bfe-97eb-44f7-abfc-b22b944be59f: !Template
     answer_choices: null
