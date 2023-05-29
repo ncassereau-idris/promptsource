@@ -16,7 +16,9 @@ templates:
       languages:
       - fr
       metrics:
-      - Edit Distance
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
       original_task: true
     name: list-DEVI
     reference: list-DEVI
@@ -36,7 +38,9 @@ templates:
       languages:
       - fr
       metrics:
-      - Edit Distance
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
       original_task: true
     name: list-GEOG
     reference: list-GEOG
@@ -56,7 +60,9 @@ templates:
       languages:
       - fr
       metrics:
-      - Edit Distance
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
       original_task: true
     name: list-OBJC
     reference: list-OBJC
@@ -76,7 +82,9 @@ templates:
       languages:
       - fr
       metrics:
-      - Edit Distance
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
       original_task: true
     name: list-LIVB
     reference: list-LIVB
@@ -93,16 +101,19 @@ templates:
       \ %} {% endif %}{% endif %}{% endif %}{% endfor %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
-      languages: []
+      languages:
+      - fr
       metrics:
-      - Edit Distance
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
       original_task: false
     name: list-PROC
     reference: list-PROC
   a69c1415-103c-4fa3-aefb-ccfd8d754e11: !Template
     answer_choices: "partie du corps|||\xEAtre vivant|||sympt\xF4me ou maladie|||proc\xE9\
       dure m\xE9dicale|||composant chimique ou m\xE9dicament|||zone g\xE9ographique|||physiologie|||ph\xE9\
-      nom\xE8ne|||objet|||appareil"
+      nom\xE8ne|||objet|||appareil|||none"
     id: a69c1415-103c-4fa3-aefb-ccfd8d754e11
     jinja: "{% set entities = [] %}{% set entity_types = [] %}{% set prev_entities\
       \ = [None] %}{% for idx in range(ner_tags|length) %}{% if ner_tags[idx] != 0\
@@ -129,9 +140,11 @@ templates:
       \ == 7 %}physiologie{%elif entity_types[rand_idx] == 8 %}ph\xE9nom\xE8ne{%elif\
       \ entity_types[rand_idx] == 9 %}objet{%elif entity_types[rand_idx] == 10 %}appareil{%endif%}"
     metadata: !TemplateMetadata
-      choices_in_prompt: false
-      languages: []
-      metrics: []
+      choices_in_prompt: true
+      languages:
+      - fr
+      metrics:
+      - Accuracy
       original_task: false
     name: choose-entity
     reference: choose-entity
@@ -151,7 +164,9 @@ templates:
       languages:
       - fr
       metrics:
-      - Edit Distance
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
       original_task: true
     name: list-DISO
     reference: list-DISO
@@ -171,7 +186,9 @@ templates:
       languages:
       - fr
       metrics:
-      - Edit Distance
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
       original_task: true
     name: list-PHYS
     reference: list-PHYS
@@ -191,7 +208,9 @@ templates:
       languages:
       - fr
       metrics:
-      - Edit Distance
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
       original_task: true
     name: list-ANAT
     reference: list-ANAT
@@ -208,9 +227,12 @@ templates:
       \ != ner_num  %}\n{% else %} {% endif %}{% endif %}{% endif %}{% endfor %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
-      languages: []
+      languages:
+      - fr
       metrics:
-      - Edit Distance
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
       original_task: true
     name: list-CHEM
     reference: list-CHEM
@@ -230,7 +252,9 @@ templates:
       languages:
       - fr
       metrics:
-      - Edit Distance
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
       original_task: true
     name: list-PHEN
     reference: list-PHEN
