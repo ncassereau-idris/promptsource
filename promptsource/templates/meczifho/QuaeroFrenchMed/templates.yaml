@@ -3,14 +3,15 @@ templates:
   34a46bfe-97eb-44f7-abfc-b22b944be59f: !Template
     answer_choices: null
     id: 34a46bfe-97eb-44f7-abfc-b22b944be59f
-    jinja: "{% set ner_num = 10 %}\nLister les entit\xE9s de type \"appareil\" dans\
-      \ le texte suivant : {% for idx in range(words|length) %}{{ words[idx] }}{%\
-      \ if idx+1 < words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC\
-      $\xA3\\\")\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif\
-      \ %}{% endfor %}||| \n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
-      \ == ner_num %}{{ words[idx] }}{% endif %}{% if idx+1 < ner_tags|length %}{%\
-      \ if ner_tags[idx] == ner_num %}{% if ner_tags[idx+1] != ner_num  %}\n{% else\
-      \ %} {% endif %}{% endif %}{% endif %}{% endfor %}"
+    jinja: "{% set ner_num = 10 %}\nVoici le titre d'un article scientifique m\xE9\
+      dical :\n\"{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1 <\
+      \ words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
+      )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
+      \ %}\"\nLister tous les appareils mentionn\xE9s dans ce titre : |||\n{% for\
+      \ idx in range(ner_tags|length) %}{% if ner_tags[idx] == ner_num %}{{ words[idx]\
+      \ }}{% endif %}{% if idx+1 < ner_tags|length %}{% if ner_tags[idx] == ner_num\
+      \ %}{% if ner_tags[idx+1] != ner_num  %}\n{% else %} {% endif %}{% endif %}{%\
+      \ endif %}{% endfor %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -25,14 +26,15 @@ templates:
   36316877-8a0d-433a-b0d8-ac426a9ee922: !Template
     answer_choices: null
     id: 36316877-8a0d-433a-b0d8-ac426a9ee922
-    jinja: "{% set ner_num = 6 %}\nLister les entit\xE9s de type \"zone g\xE9ographique\"\
-      \ dans le texte suivant : {% for idx in range(words|length) %}{{ words[idx]\
-      \ }}{% if idx+1 < words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC\
-      $\xA3\\\")\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif\
-      \ %}{% endfor %}||| \n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
+    jinja: "{% set ner_num = 6 %}\nVoici le titre d'un article scientifique m\xE9\
+      dical :\n\"{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1 <\
+      \ words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
+      )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
+      \ %}\"\nLister toutes les zones g\xE9ographiques qui sont mentionn\xE9es dans\
+      \ ce titre : ||| \n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
       \ == ner_num %}{{ words[idx] }}{% endif %}{% if idx+1 < ner_tags|length %}{%\
       \ if ner_tags[idx] == ner_num %}{% if ner_tags[idx+1] != ner_num  %}\n{% else\
-      \ %} {% endif %}{% endif %}{% endif %}{% endfor %}"
+      \ %} {% endif %}{% endif %}{% endif %}{% endfor %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -47,14 +49,15 @@ templates:
   471abd04-f81f-4546-80cf-28a2a1db54e6: !Template
     answer_choices: null
     id: 471abd04-f81f-4546-80cf-28a2a1db54e6
-    jinja: "{% set ner_num = 9 %}\nLister les entit\xE9s de type \"objet\" dans le\
-      \ texte suivant : {% for idx in range(words|length) %}{{ words[idx] }}{% if\
-      \ idx+1 < words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\
-      \\\")\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{%\
-      \ endfor %}||| \n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
-      \ == ner_num %}{{ words[idx] }}{% endif %}{% if idx+1 < ner_tags|length %}{%\
-      \ if ner_tags[idx] == ner_num %}{% if ner_tags[idx+1] != ner_num  %}\n{% else\
-      \ %} {% endif %}{% endif %}{% endif %}{% endfor %}\n"
+    jinja: "{% set ner_num = 9 %}\nVoici le titre d'un article scientifique m\xE9\
+      dical :\n\"{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1 <\
+      \ words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
+      )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
+      \ %}\"\nLister tous les objets mentionn\xE9s dans ce titre : |||\n{% for idx\
+      \ in range(ner_tags|length) %}{% if ner_tags[idx] == ner_num %}{{ words[idx]\
+      \ }}{% endif %}{% if idx+1 < ner_tags|length %}{% if ner_tags[idx] == ner_num\
+      \ %}{% if ner_tags[idx+1] != ner_num  %}\n{% else %} {% endif %}{% endif %}{%\
+      \ endif %}{% endfor %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -69,14 +72,15 @@ templates:
   7ba4da6f-9043-42f7-9645-8fe5548d9480: !Template
     answer_choices: null
     id: 7ba4da6f-9043-42f7-9645-8fe5548d9480
-    jinja: "{% set ner_num = 2 %}\nLister les entit\xE9s de type \"\xEAtre vivant\"\
-      \ dans le texte suivant : {% for idx in range(words|length) %}{{ words[idx]\
-      \ }}{% if idx+1 < words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC\
-      $\xA3\\\")\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif\
-      \ %}{% endfor %}||| \n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
-      \ == ner_num %}{{ words[idx] }}{% endif %}{% if idx+1 < ner_tags|length %}{%\
-      \ if ner_tags[idx] == ner_num %}{% if ner_tags[idx+1] != ner_num  %}\n{% else\
-      \ %} {% endif %}{% endif %}{% endif %}{% endfor %}"
+    jinja: "{% set ner_num = 2 %}\nVoici le titre d'un article scientifique m\xE9\
+      dical :\n\"{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1 <\
+      \ words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
+      )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
+      \ %}\"\nLister tous les \xEAtres vivants qui sont mentionn\xE9s dans ce titre\
+      \ : ||| \n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx] == ner_num\
+      \ %}{{ words[idx] }}{% endif %}{% if idx+1 < ner_tags|length %}{% if ner_tags[idx]\
+      \ == ner_num %}{% if ner_tags[idx+1] != ner_num  %}\n{% else %} {% endif %}{%\
+      \ endif %}{% endif %}{% endfor %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -91,11 +95,12 @@ templates:
   a428821a-cba4-4c43-aeba-f4a5c95beec4: !Template
     answer_choices: null
     id: a428821a-cba4-4c43-aeba-f4a5c95beec4
-    jinja: "{% set ner_num = 4 %}\nLister les entit\xE9s de type \"proc\xE9dure m\xE9\
-      dicale\" dans le texte suivant : {% for idx in range(words|length) %}{{ words[idx]\
-      \ }}{% if idx+1 < words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC\
-      $\xA3\\\")\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif\
-      \ %}{% endfor %}||| \n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
+    jinja: "{% set ner_num = 4 %}\nVoici le titre d'un article scientifique m\xE9\
+      dical :\n\"{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1 <\
+      \ words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
+      )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
+      \ %}\"\nLister toutes les proc\xE9dures m\xE9dicales qui sont mentionn\xE9es\
+      \ dans ce titre : ||| \n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
       \ == ner_num %}{{ words[idx] }}{% endif %}{% if idx+1 < ner_tags|length %}{%\
       \ if ner_tags[idx] == ner_num %}{% if ner_tags[idx+1] != ner_num  %}\n{% else\
       \ %} {% endif %}{% endif %}{% endif %}{% endfor %}"
@@ -138,8 +143,8 @@ templates:
       dure m\xE9dicale{%elif entity_types[rand_idx] == 5 %}composant chimique ou m\xE9\
       dicament{%elif entity_types[rand_idx] == 6 %}zone g\xE9ographique{%elif entity_types[rand_idx]\
       \ == 7 %}physiologie{%elif entity_types[rand_idx] == 8 %}ph\xE9nom\xE8ne{%elif\
-      \ entity_types[rand_idx] == 9 %}objet{%elif entity_types[rand_idx] == 10 %}appareil\
-      \ {% else %}none{%endif%}"
+      \ entity_types[rand_idx] == 9 %}objet{%elif entity_types[rand_idx] == 10 %}appareil{%\
+      \ else %}none{%endif%}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -152,11 +157,12 @@ templates:
   a6b1d3a2-9be4-4286-b921-fb1a1e59a541: !Template
     answer_choices: null
     id: a6b1d3a2-9be4-4286-b921-fb1a1e59a541
-    jinja: "{% set ner_num = 3 %}\nLister les entit\xE9s de type \"maladie ou sympt\xF4\
-      me\" dans le texte suivant : {% for idx in range(words|length) %}{{ words[idx]\
-      \ }}{% if idx+1 < words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC\
-      $\xA3\\\")\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif\
-      \ %}{% endfor %}||| \n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
+    jinja: "{% set ner_num = 3 %}\nVoici le titre d'un article scientifique m\xE9\
+      dical :\n\"{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1 <\
+      \ words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
+      )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
+      \ %}\"\nLister tous les sympt\xF4mes et les maladies qui sont mentionn\xE9s\
+      \ dans ce titre : ||| \n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
       \ == ner_num %}{{ words[idx] }}{% endif %}{% if idx+1 < ner_tags|length %}{%\
       \ if ner_tags[idx] == ner_num %}{% if ner_tags[idx+1] != ner_num  %}\n{% else\
       \ %} {% endif %}{% endif %}{% endif %}{% endfor %}"
@@ -174,11 +180,12 @@ templates:
   ac549f30-b4c3-4238-8aef-dbcf0fb64bd6: !Template
     answer_choices: null
     id: ac549f30-b4c3-4238-8aef-dbcf0fb64bd6
-    jinja: "{% set ner_num = 7 %}\nLister les entit\xE9s de type \"physiologie\" dans\
-      \ le texte suivant : {% for idx in range(words|length) %}{{ words[idx] }}{%\
-      \ if idx+1 < words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC\
-      $\xA3\\\")\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif\
-      \ %}{% endfor %}||| \n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
+    jinja: "{% set ner_num = 7 %}\nVoici le titre d'un article scientifique m\xE9\
+      dical :\n\"{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1 <\
+      \ words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
+      )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
+      \ %}\"\nLister tous les mots \xE9voquant la physiologie humaine qui sont mentionn\xE9\
+      s dans ce titre : ||| \n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
       \ == ner_num %}{{ words[idx] }}{% endif %}{% if idx+1 < ner_tags|length %}{%\
       \ if ner_tags[idx] == ner_num %}{% if ner_tags[idx+1] != ner_num  %}\n{% else\
       \ %} {% endif %}{% endif %}{% endif %}{% endfor %}"
@@ -196,14 +203,15 @@ templates:
   c2fb4614-8321-4e74-bfdf-50535e0aab64: !Template
     answer_choices: null
     id: c2fb4614-8321-4e74-bfdf-50535e0aab64
-    jinja: "{% set ner_num = 1 %}\nLister les entit\xE9s de type \"partie du corps\"\
-      \ dans le texte suivant : {% for idx in range(words|length) %}{{ words[idx]\
-      \ }}{% if idx+1 < words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC\
-      $\xA3\\\")\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif\
-      \ %}{% endfor %}||| \n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
-      \ == ner_num %}{{ words[idx] }}{% endif %}{% if idx+1 < ner_tags|length %}{%\
-      \ if ner_tags[idx] == ner_num %}{% if ner_tags[idx+1] != ner_num  %}\n{% else\
-      \ %} {% endif %}{% endif %}{% endif %}{% endfor %}"
+    jinja: "{% set ner_num = 1 %}\nVoici une phrase tir\xE9e d'un titre d'article\
+      \ clinique :\n\"{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1\
+      \ < words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
+      )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
+      \ %}\"\nLister tous les parties du corps qui sont mentionn\xE9es dans ce titre\
+      \ : ||| \n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx] == ner_num\
+      \ %}{{ words[idx] }}{% endif %}{% if idx+1 < ner_tags|length %}{% if ner_tags[idx]\
+      \ == ner_num %}{% if ner_tags[idx+1] != ner_num  %}\n{% else %} {% endif %}{%\
+      \ endif %}{% endif %}{% endfor %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -218,14 +226,15 @@ templates:
   cd73f07e-acab-4150-a677-5442b4ca4d31: !Template
     answer_choices: null
     id: cd73f07e-acab-4150-a677-5442b4ca4d31
-    jinja: "{% set ner_num = 5 %}\nLister les entit\xE9s de type \"composant chimique\
-      \ ou m\xE9dicament\" dans le texte suivant : {% for idx in range(words|length)\
-      \ %}{{ words[idx] }}{% if idx+1 < words|length %}{% if (words[idx+1] not in\
-      \ \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and words[idx][-1] not in \"'[(/\u2019\
-      -\") %} {% endif %}{% endif %}{% endfor %}||| \n{% for idx in range(ner_tags|length)\
-      \ %}{% if ner_tags[idx] == ner_num %}{{ words[idx] }}{% endif %}{% if idx+1\
-      \ < ner_tags|length %}{% if ner_tags[idx] == ner_num %}{% if ner_tags[idx+1]\
-      \ != ner_num  %}\n{% else %} {% endif %}{% endif %}{% endif %}{% endfor %}"
+    jinja: "{% set ner_num = 5 %}\nVoici le titre d'un article scientifique m\xE9\
+      dical :\n\"{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1 <\
+      \ words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
+      )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
+      \ %}\"\nLister tous les composants chimiques et les m\xE9dicaments qui sont\
+      \ mentionn\xE9s dans ce titre : ||| \n{% for idx in range(ner_tags|length) %}{%\
+      \ if ner_tags[idx] == ner_num %}{{ words[idx] }}{% endif %}{% if idx+1 < ner_tags|length\
+      \ %}{% if ner_tags[idx] == ner_num %}{% if ner_tags[idx+1] != ner_num  %}\n\
+      {% else %} {% endif %}{% endif %}{% endif %}{% endfor %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -240,14 +249,15 @@ templates:
   eb5b6f69-6834-4301-a153-546033427be1: !Template
     answer_choices: null
     id: eb5b6f69-6834-4301-a153-546033427be1
-    jinja: "{% set ner_num = 8 %}\nLister les entit\xE9s de type \"ph\xE9nom\xE8ne\"\
-      \ dans le texte suivant : {% for idx in range(words|length) %}{{ words[idx]\
-      \ }}{% if idx+1 < words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC\
-      $\xA3\\\")\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif\
-      \ %}{% endfor %}||| \n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
-      \ == ner_num %}{{ words[idx] }}{% endif %}{% if idx+1 < ner_tags|length %}{%\
-      \ if ner_tags[idx] == ner_num %}{% if ner_tags[idx+1] != ner_num  %}\n{% else\
-      \ %} {% endif %}{% endif %}{% endif %}{% endfor %}"
+    jinja: "{% set ner_num = 8 %}\nVoici le titre d'un article scientifique m\xE9\
+      dical :\n\"{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1 <\
+      \ words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
+      )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
+      \ %}\"\nLister tous les ph\xE9nom\xE8nes physiologiques mentionn\xE9s dans ce\
+      \ titre : |||\n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx] ==\
+      \ ner_num %}{{ words[idx] }}{% endif %}{% if idx+1 < ner_tags|length %}{% if\
+      \ ner_tags[idx] == ner_num %}{% if ner_tags[idx+1] != ner_num  %}\n{% else %}\
+      \ {% endif %}{% endif %}{% endif %}{% endfor %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
