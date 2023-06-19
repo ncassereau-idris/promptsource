@@ -129,7 +129,7 @@ templates:
       \ type entre \"partie du corps\", \"\xEAtre vivant\", \"sympt\xF4me ou maladie\"\
       , \"proc\xE9dure m\xE9dicale\", \"composant chimique ou m\xE9dicament\", \"\
       zone g\xE9ographique\", \"physiologie\", \"ph\xE9nom\xE8ne\", \"objet\" ou \"\
-      appareil ? \n\n{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1\
+      appareil\" ? \n\n{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1\
       \ < words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
       )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
       \ %}{% endif %}\n||| {% if entity_types[rand_idx] == 1 %}partie du corps{%elif\
@@ -138,7 +138,8 @@ templates:
       dure m\xE9dicale{%elif entity_types[rand_idx] == 5 %}composant chimique ou m\xE9\
       dicament{%elif entity_types[rand_idx] == 6 %}zone g\xE9ographique{%elif entity_types[rand_idx]\
       \ == 7 %}physiologie{%elif entity_types[rand_idx] == 8 %}ph\xE9nom\xE8ne{%elif\
-      \ entity_types[rand_idx] == 9 %}objet{%elif entity_types[rand_idx] == 10 %}appareil{%endif%}"
+      \ entity_types[rand_idx] == 9 %}objet{%elif entity_types[rand_idx] == 10 %}appareil\
+      \ {% else %}none{%endif%}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
