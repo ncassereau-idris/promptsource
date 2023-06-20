@@ -1,0 +1,267 @@
+dataset: meczifho/QuaeroFrenchMed
+subset: EMEA
+templates:
+  34a46bfe-97eb-44f7-abfc-b22b944be59f: !Template
+    answer_choices: null
+    id: 34a46bfe-97eb-44f7-abfc-b22b944be59f
+    jinja: "{% set ner_num = 10 %}\nVoici une notice patient :\n\"{% for idx in range(words|length)\
+      \ %}{{ words[idx] }}{% if idx+1 < words|length %}{% if (words[idx+1] not in\
+      \ \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and words[idx][-1] not in \"'[(/\u2019\
+      -\") %} {% endif %}{% endif %}{% endfor %}\"\nLister tous les appareils mentionn\xE9\
+      s dans cette notice : |||\n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
+      \ == ner_num %}{{ words[idx] }}{% endif %}{% if idx+1 < ner_tags|length %}{%\
+      \ if ner_tags[idx] == ner_num %}{% if ner_tags[idx+1] != ner_num  %}\n{% else\
+      \ %} {% endif %}{% endif %}{% endif %}{% endfor %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
+      original_task: true
+    name: list-DEVI
+    reference: list-DEVI
+  36316877-8a0d-433a-b0d8-ac426a9ee922: !Template
+    answer_choices: null
+    id: 36316877-8a0d-433a-b0d8-ac426a9ee922
+    jinja: "{% set ner_num = 6 %}\nVoici une notice patient :\n\"{% for idx in range(words|length)\
+      \ %}{{ words[idx] }}{% if idx+1 < words|length %}{% if (words[idx+1] not in\
+      \ \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and words[idx][-1] not in \"'[(/\u2019\
+      -\") %} {% endif %}{% endif %}{% endfor %}\"\nLister toutes les zones g\xE9\
+      ographiques qui sont mentionn\xE9es dans cette notice : ||| \n{% for idx in\
+      \ range(ner_tags|length) %}{% if ner_tags[idx] == ner_num %}{{ words[idx] }}{%\
+      \ endif %}{% if idx+1 < ner_tags|length %}{% if ner_tags[idx] == ner_num %}{%\
+      \ if ner_tags[idx+1] != ner_num  %}\n{% else %} {% endif %}{% endif %}{% endif\
+      \ %}{% endfor %}\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
+      original_task: true
+    name: list-GEOG
+    reference: list-GEOG
+  471abd04-f81f-4546-80cf-28a2a1db54e6: !Template
+    answer_choices: null
+    id: 471abd04-f81f-4546-80cf-28a2a1db54e6
+    jinja: "{% set ner_num = 9 %}\nVoici une notice patient :\n\"{% for idx in range(words|length)\
+      \ %}{{ words[idx] }}{% if idx+1 < words|length %}{% if (words[idx+1] not in\
+      \ \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and words[idx][-1] not in \"'[(/\u2019\
+      -\") %} {% endif %}{% endif %}{% endfor %}\"\nLister tous les objets mentionn\xE9\
+      s dans cette notice : |||\n{% for idx in range(ner_tags|length) %}{% if ner_tags[idx]\
+      \ == ner_num %}{{ words[idx] }}{% endif %}{% if idx+1 < ner_tags|length %}{%\
+      \ if ner_tags[idx] == ner_num %}{% if ner_tags[idx+1] != ner_num  %}\n{% else\
+      \ %} {% endif %}{% endif %}{% endif %}{% endfor %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
+      original_task: true
+    name: list-OBJC
+    reference: list-OBJC
+  7ba4da6f-9043-42f7-9645-8fe5548d9480: !Template
+    answer_choices: null
+    id: 7ba4da6f-9043-42f7-9645-8fe5548d9480
+    jinja: "{% set ner_num = 2 %}\nVoici une notice patient :\n\"{% for idx in range(words|length)\
+      \ %}{{ words[idx] }}{% if idx+1 < words|length %}{% if (words[idx+1] not in\
+      \ \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and words[idx][-1] not in \"'[(/\u2019\
+      -\") %} {% endif %}{% endif %}{% endfor %}\"\nLister tous les \xEAtres vivants\
+      \ qui sont mentionn\xE9s dans cette notice : ||| \n{% for idx in range(ner_tags|length)\
+      \ %}{% if ner_tags[idx] == ner_num %}{{ words[idx] }}{% endif %}{% if idx+1\
+      \ < ner_tags|length %}{% if ner_tags[idx] == ner_num %}{% if ner_tags[idx+1]\
+      \ != ner_num  %}\n{% else %} {% endif %}{% endif %}{% endif %}{% endfor %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
+      original_task: true
+    name: list-LIVB
+    reference: list-LIVB
+  a428821a-cba4-4c43-aeba-f4a5c95beec4: !Template
+    answer_choices: null
+    id: a428821a-cba4-4c43-aeba-f4a5c95beec4
+    jinja: "{% set ner_num = 4 %}\nVoici une notice patient :\n\"{% for idx in range(words|length)\
+      \ %}{{ words[idx] }}{% if idx+1 < words|length %}{% if (words[idx+1] not in\
+      \ \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and words[idx][-1] not in \"'[(/\u2019\
+      -\") %} {% endif %}{% endif %}{% endfor %}\"\nLister toutes les proc\xE9dures\
+      \ m\xE9dicales qui sont mentionn\xE9es dans cette notice : ||| \n{% for idx\
+      \ in range(ner_tags|length) %}{% if ner_tags[idx] == ner_num %}{{ words[idx]\
+      \ }}{% endif %}{% if idx+1 < ner_tags|length %}{% if ner_tags[idx] == ner_num\
+      \ %}{% if ner_tags[idx+1] != ner_num  %}\n{% else %} {% endif %}{% endif %}{%\
+      \ endif %}{% endfor %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
+      original_task: false
+    name: list-PROC
+    reference: list-PROC
+  a69c1415-103c-4fa3-aefb-ccfd8d754e11: !Template
+    answer_choices: "partie du corps|||\xEAtre vivant|||sympt\xF4me ou maladie|||proc\xE9\
+      dure m\xE9dicale|||composant chimique ou m\xE9dicament|||zone g\xE9ographique|||physiologie|||ph\xE9\
+      nom\xE8ne|||objet|||appareil|||none"
+    id: a69c1415-103c-4fa3-aefb-ccfd8d754e11
+    jinja: "{% set entities = [] %}{% set entity_types = [] %}{% set prev_entities\
+      \ = [None] %}{% for idx in range(ner_tags|length) %}{% if ner_tags[idx] != 0\
+      \ %}{% if ner_tags[idx] != prev_entities[idx] %}{{ entities.append([])|default(\"\
+      \", True) }}{{ entity_types.append(ner_tags[idx])|default(\"\", True) }}{% endif\
+      \ %}{{ entities[-1].append(words[idx])|default(\"\", True)  }}{% endif %}{{\
+      \ prev_entities.append(ner_tags[idx])|default(\"\", True) }}{% endfor %}{% set\
+      \ rand_idx = range(entities|length)|random %}{% if entities|length > 0 %}\n\
+      Voici une notice patient :\n\"{% for idx in range(words|length) %}{{ words[idx]\
+      \ }}{% if idx+1 < words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC\
+      $\xA3\\\")\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif\
+      \ %}{% endfor %}{% endif %}\"\n\nQuel est le type de \"{% for idx in range(entities[rand_idx]|length)\
+      \ %}{{ entities[rand_idx][idx] }}{% if idx+1 < entities[rand_idx]|length %}{%\
+      \ if (entities[rand_idx][idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and\
+      \ entities[rand_idx][idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif\
+      \ %}{% endfor %}\" parmi \"partie du corps\", \"\xEAtre vivant\", \"sympt\xF4\
+      me ou maladie\", \"proc\xE9dure m\xE9dicale\", \"composant chimique ou m\xE9\
+      dicament\", \"zone g\xE9ographique\", \"physiologie\", \"ph\xE9nom\xE8ne\",\
+      \ \"objet\" ou \"appareil\" ? \n||| {% if entity_types[rand_idx] == 1 %}partie\
+      \ du corps{%elif entity_types[rand_idx] == 2 %}\xEAtre vivant{%elif entity_types[rand_idx]\
+      \ == 3 %}sympt\xF4me ou maladie{%elif entity_types[rand_idx] == 4 %}proc\xE9\
+      dure m\xE9dicale{%elif entity_types[rand_idx] == 5 %}composant chimique ou m\xE9\
+      dicament{%elif entity_types[rand_idx] == 6 %}zone g\xE9ographique{%elif entity_types[rand_idx]\
+      \ == 7 %}physiologie{%elif entity_types[rand_idx] == 8 %}ph\xE9nom\xE8ne{%elif\
+      \ entity_types[rand_idx] == 9 %}objet{%elif entity_types[rand_idx] == 10 %}appareil{%\
+      \ else %}none{%endif%}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - fr
+      metrics:
+      - Accuracy
+      original_task: false
+    name: choose-entity
+    reference: choose-entity
+  a6b1d3a2-9be4-4286-b921-fb1a1e59a541: !Template
+    answer_choices: null
+    id: a6b1d3a2-9be4-4286-b921-fb1a1e59a541
+    jinja: "{% set ner_num = 3 %}\nVoici une notice patient :\n\"{% for idx in range(words|length)\
+      \ %}{{ words[idx] }}{% if idx+1 < words|length %}{% if (words[idx+1] not in\
+      \ \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and words[idx][-1] not in \"'[(/\u2019\
+      -\") %} {% endif %}{% endif %}{% endfor %}\"\nLister tous les sympt\xF4mes et\
+      \ les maladies qui sont mentionn\xE9s dans cette notice : ||| \n{% for idx in\
+      \ range(ner_tags|length) %}{% if ner_tags[idx] == ner_num %}{{ words[idx] }}{%\
+      \ endif %}{% if idx+1 < ner_tags|length %}{% if ner_tags[idx] == ner_num %}{%\
+      \ if ner_tags[idx+1] != ner_num  %}\n{% else %} {% endif %}{% endif %}{% endif\
+      \ %}{% endfor %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
+      original_task: true
+    name: list-DISO
+    reference: list-DISO
+  ac549f30-b4c3-4238-8aef-dbcf0fb64bd6: !Template
+    answer_choices: null
+    id: ac549f30-b4c3-4238-8aef-dbcf0fb64bd6
+    jinja: "{% set ner_num = 7 %}\nVoici une notice patient :\n\"{% for idx in range(words|length)\
+      \ %}{{ words[idx] }}{% if idx+1 < words|length %}{% if (words[idx+1] not in\
+      \ \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and words[idx][-1] not in \"'[(/\u2019\
+      -\") %} {% endif %}{% endif %}{% endfor %}\"\nLister tous les mots \xE9voquant\
+      \ la physiologie humaine qui sont mentionn\xE9s dans cette notice : ||| \n{%\
+      \ for idx in range(ner_tags|length) %}{% if ner_tags[idx] == ner_num %}{{ words[idx]\
+      \ }}{% endif %}{% if idx+1 < ner_tags|length %}{% if ner_tags[idx] == ner_num\
+      \ %}{% if ner_tags[idx+1] != ner_num  %}\n{% else %} {% endif %}{% endif %}{%\
+      \ endif %}{% endfor %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
+      original_task: true
+    name: list-PHYS
+    reference: list-PHYS
+  c2fb4614-8321-4e74-bfdf-50535e0aab64: !Template
+    answer_choices: null
+    id: c2fb4614-8321-4e74-bfdf-50535e0aab64
+    jinja: "{% set ner_num = 1 %}\nVoici une notice patient :\n\"{% for idx in range(words|length)\
+      \ %}{{ words[idx] }}{% if idx+1 < words|length %}{% if (words[idx+1] not in\
+      \ \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and words[idx][-1] not in \"'[(/\u2019\
+      -\") %} {% endif %}{% endif %}{% endfor %}\"\nLister toutes les parties du corps\
+      \ qui sont mentionn\xE9es dans cette notice : ||| \n{% for idx in range(ner_tags|length)\
+      \ %}{% if ner_tags[idx] == ner_num %}{{ words[idx] }}{% endif %}{% if idx+1\
+      \ < ner_tags|length %}{% if ner_tags[idx] == ner_num %}{% if ner_tags[idx+1]\
+      \ != ner_num  %}\n{% else %} {% endif %}{% endif %}{% endif %}{% endfor %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
+      original_task: true
+    name: list-ANAT
+    reference: list-ANAT
+  cd73f07e-acab-4150-a677-5442b4ca4d31: !Template
+    answer_choices: null
+    id: cd73f07e-acab-4150-a677-5442b4ca4d31
+    jinja: "{% set ner_num = 5 %}\nVoici une notice patient :\n\"{% for idx in range(words|length)\
+      \ %}{{ words[idx] }}{% if idx+1 < words|length %}{% if (words[idx+1] not in\
+      \ \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and words[idx][-1] not in \"'[(/\u2019\
+      -\") %} {% endif %}{% endif %}{% endfor %}\"\nLister tous les composants chimiques\
+      \ et les m\xE9dicaments qui sont mentionn\xE9s dans cette notice : ||| \n{%\
+      \ for idx in range(ner_tags|length) %}{% if ner_tags[idx] == ner_num %}{{ words[idx]\
+      \ }}{% endif %}{% if idx+1 < ner_tags|length %}{% if ner_tags[idx] == ner_num\
+      \ %}{% if ner_tags[idx+1] != ner_num  %}\n{% else %} {% endif %}{% endif %}{%\
+      \ endif %}{% endfor %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
+      original_task: true
+    name: list-CHEM
+    reference: list-CHEM
+  eb5b6f69-6834-4301-a153-546033427be1: !Template
+    answer_choices: null
+    id: eb5b6f69-6834-4301-a153-546033427be1
+    jinja: "{% set ner_num = 8 %}\nVoici une notice patient :\n\"{% for idx in range(words|length)\
+      \ %}{{ words[idx] }}{% if idx+1 < words|length %}{% if (words[idx+1] not in\
+      \ \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and words[idx][-1] not in \"'[(/\u2019\
+      -\") %} {% endif %}{% endif %}{% endfor %}\"\nLister tous les ph\xE9nom\xE8\
+      nes physiologiques mentionn\xE9s dans cette notice : |||\n{% for idx in range(ner_tags|length)\
+      \ %}{% if ner_tags[idx] == ner_num %}{{ words[idx] }}{% endif %}{% if idx+1\
+      \ < ner_tags|length %}{% if ner_tags[idx] == ner_num %}{% if ner_tags[idx+1]\
+      \ != ner_num  %}\n{% else %} {% endif %}{% endif %}{% endif %}{% endfor %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - fr
+      metrics:
+      - fuzzy_list_p
+      - fuzzy_list_r
+      - fuzzy_list_f
+      original_task: true
+    name: list-PHEN
+    reference: list-PHEN
