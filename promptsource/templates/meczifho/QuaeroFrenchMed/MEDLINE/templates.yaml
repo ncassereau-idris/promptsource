@@ -4,7 +4,7 @@ templates:
   34a46bfe-97eb-44f7-abfc-b22b944be59f: !Template
     answer_choices: null
     id: 34a46bfe-97eb-44f7-abfc-b22b944be59f
-    jinja: "{% set ner_num = 10 %}\nVoici le titre d'un article scientifique m\xE9\
+    jinja: "{% set ner_num = 9 %}\nVoici le titre d'un article scientifique m\xE9\
       dical :\n\"{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1 <\
       \ words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
       )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
@@ -27,7 +27,7 @@ templates:
   36316877-8a0d-433a-b0d8-ac426a9ee922: !Template
     answer_choices: null
     id: 36316877-8a0d-433a-b0d8-ac426a9ee922
-    jinja: "{% set ner_num = 6 %}\nVoici le titre d'un article scientifique m\xE9\
+    jinja: "{% set ner_num = 8 %}\nVoici le titre d'un article scientifique m\xE9\
       dical :\n\"{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1 <\
       \ words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
       )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
@@ -50,7 +50,7 @@ templates:
   471abd04-f81f-4546-80cf-28a2a1db54e6: !Template
     answer_choices: null
     id: 471abd04-f81f-4546-80cf-28a2a1db54e6
-    jinja: "{% set ner_num = 9 %}\nVoici le titre d'un article scientifique m\xE9\
+    jinja: "{% set ner_num = 10 %}\nVoici le titre d'un article scientifique m\xE9\
       dical :\n\"{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1 <\
       \ words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
       )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
@@ -73,7 +73,7 @@ templates:
   7ba4da6f-9043-42f7-9645-8fe5548d9480: !Template
     answer_choices: null
     id: 7ba4da6f-9043-42f7-9645-8fe5548d9480
-    jinja: "{% set ner_num = 2 %}\nVoici le titre d'un article scientifique m\xE9\
+    jinja: "{% set ner_num = 4 %}\nVoici le titre d'un article scientifique m\xE9\
       dical :\n\"{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1 <\
       \ words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
       )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
@@ -96,7 +96,7 @@ templates:
   a428821a-cba4-4c43-aeba-f4a5c95beec4: !Template
     answer_choices: null
     id: a428821a-cba4-4c43-aeba-f4a5c95beec4
-    jinja: "{% set ner_num = 4 %}\nVoici le titre d'un article scientifique m\xE9\
+    jinja: "{% set ner_num = 2 %}\nVoici le titre d'un article scientifique m\xE9\
       dical :\n\"{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1 <\
       \ words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
       )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
@@ -158,7 +158,7 @@ templates:
   a6b1d3a2-9be4-4286-b921-fb1a1e59a541: !Template
     answer_choices: null
     id: a6b1d3a2-9be4-4286-b921-fb1a1e59a541
-    jinja: "{% set ner_num = 3 %}\nVoici le titre d'un article scientifique m\xE9\
+    jinja: "{% set ner_num = 1 %}\nVoici le titre d'un article scientifique m\xE9\
       dical :\n\"{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1 <\
       \ words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
       )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
@@ -181,7 +181,7 @@ templates:
   ac549f30-b4c3-4238-8aef-dbcf0fb64bd6: !Template
     answer_choices: null
     id: ac549f30-b4c3-4238-8aef-dbcf0fb64bd6
-    jinja: "{% set ner_num = 7 %}\nVoici le titre d'un article scientifique m\xE9\
+    jinja: "{% set ner_num = 6 %}\nVoici le titre d'un article scientifique m\xE9\
       dical :\n\"{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1 <\
       \ words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
       )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
@@ -204,7 +204,7 @@ templates:
   c2fb4614-8321-4e74-bfdf-50535e0aab64: !Template
     answer_choices: null
     id: c2fb4614-8321-4e74-bfdf-50535e0aab64
-    jinja: "{% set ner_num = 1 %}\nVoici le titre d'un article scientifique m\xE9\
+    jinja: "{% set ner_num = 3 %}\nVoici le titre d'un article scientifique m\xE9\
       dical :\n\"{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1 <\
       \ words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
       )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
@@ -250,7 +250,7 @@ templates:
   eb5b6f69-6834-4301-a153-546033427be1: !Template
     answer_choices: null
     id: eb5b6f69-6834-4301-a153-546033427be1
-    jinja: "{% set ner_num = 8 %}\nVoici le titre d'un article scientifique m\xE9\
+    jinja: "{% set ner_num = 7 %}\nVoici le titre d'un article scientifique m\xE9\
       dical :\n\"{% for idx in range(words|length) %}{{ words[idx] }}{% if idx+1 <\
       \ words|length %}{% if (words[idx+1] not in \"])'/\u2019.,%-\u20AC$\xA3\\\"\
       )\" and words[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif %}{% endfor\
