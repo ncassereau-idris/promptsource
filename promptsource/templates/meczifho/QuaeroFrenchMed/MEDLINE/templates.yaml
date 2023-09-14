@@ -139,13 +139,13 @@ templates:
       \ du corps\", \"\xEAtre vivant\", \"sympt\xF4me ou maladie\", \"proc\xE9dure\
       \ m\xE9dicale\", \"composant chimique ou m\xE9dicament\", \"zone g\xE9ographique\"\
       , \"physiologie\", \"ph\xE9nom\xE8ne\", \"objet\" ou \"appareil\" ? \n||| {%\
-      \ if entity_types[rand_idx] == 1 %}partie du corps{%elif entity_types[rand_idx]\
-      \ == 2 %}\xEAtre vivant{%elif entity_types[rand_idx] == 3 %}sympt\xF4me ou maladie{%elif\
-      \ entity_types[rand_idx] == 4 %}proc\xE9dure m\xE9dicale{%elif entity_types[rand_idx]\
+      \ if entity_types[rand_idx] == 3 %}partie du corps{%elif entity_types[rand_idx]\
+      \ == 4 %}\xEAtre vivant{%elif entity_types[rand_idx] == 1 %}sympt\xF4me ou maladie{%elif\
+      \ entity_types[rand_idx] == 2 %}proc\xE9dure m\xE9dicale{%elif entity_types[rand_idx]\
       \ == 5 %}composant chimique ou m\xE9dicament{%elif entity_types[rand_idx] ==\
-      \ 6 %}zone g\xE9ographique{%elif entity_types[rand_idx] == 7 %}physiologie{%elif\
-      \ entity_types[rand_idx] == 8 %}ph\xE9nom\xE8ne{%elif entity_types[rand_idx]\
-      \ == 9 %}objet{%elif entity_types[rand_idx] == 10 %}appareil{% else %}none{%endif%}"
+      \ 8 %}zone g\xE9ographique{%elif entity_types[rand_idx] == 6 %}physiologie{%elif\
+      \ entity_types[rand_idx] == 7 %}ph\xE9nom\xE8ne{%elif entity_types[rand_idx]\
+      \ == 10 %}objet{%elif entity_types[rand_idx] == 9 %}appareil{% else %}none{%endif%}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
