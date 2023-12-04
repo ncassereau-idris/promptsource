@@ -84,7 +84,7 @@ templates:
   8f6dff29-a3a1-4916-923d-50c29f7faa53: !Template
     answer_choices: null
     id: 8f6dff29-a3a1-4916-923d-50c29f7faa53
-    jinja: "D'abord, lisez le texte ci-dessous. \n\n{{source}}\n\nMaitenant, s'il-vous-plait,\
+    jinja: "D'abord, lisez le texte ci-dessous. \n\n{{source}}\n\nMaintenant, s'il-vous-plait,\
       \ \xE9crivez un court r\xE9sum\xE9 en fran\xE7ais. ||| {{target}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
