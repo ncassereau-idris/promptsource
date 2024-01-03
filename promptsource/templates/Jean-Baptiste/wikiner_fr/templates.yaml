@@ -3,7 +3,7 @@ templates:
   0beb0a15-230c-4a7f-ad75-7c573a14bd12: !Template
     answer_choices: null
     id: 0beb0a15-230c-4a7f-ad75-7c573a14bd12
-    jinja: "{% set ner_num = 3 %}\nLister les entit\xE9s de type \"organisation\"\
+    jinja: "{% set ner_num = 4 %}\nLister les entit\xE9s de type \"organisation\"\
       \ dans le texte suivant : {% for idx in range(tokens|length) %}{{ tokens[idx]\
       \ }}{% if idx+1 < tokens|length %}{% if (tokens[idx+1] not in \"])'/\u2019.,%-\u20AC\
       $\xA3\\\")\" and tokens[idx][-1] not in \"'[(/\u2019-\") %} {% endif %}{% endif\
@@ -63,7 +63,7 @@ templates:
       \ in \"])'/\u2019.,%-\u20AC$\xA3\\\")\" and tokens[idx][-1] not in \"'[(/\u2019\
       -\") %} {% endif %}{% endif %}{% endfor %}{% endif %}\n||| {% if entity_types[rand_idx]\
       \ == 1 %}lieu{% elif entity_types[rand_idx] == 2 %}personne{% elif entity_types[rand_idx]\
-      \ == 3 %}organisation{% else %}none{% endif %}\n"
+      \ == 4 %}organisation{% else %}none{% endif %}\n"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
